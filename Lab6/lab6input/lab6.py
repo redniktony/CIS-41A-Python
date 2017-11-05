@@ -20,7 +20,9 @@ def checker(name):
     except IOError:             
         print('An error occured trying to read the file. Check the file is in the same folder.')
     except ValueError:
-        print('Non-numeric data found in the file. Did you put the correct files?')    
+        print('Non-numeric data found in the file. Did you put the correct files?') 
+    except:
+        print('Something is wrong.')
     counter['percentage'] = counter['vowel'] / counter['total'] #Percentage calculation
     return counter 
 '''
