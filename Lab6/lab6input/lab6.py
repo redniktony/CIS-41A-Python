@@ -20,7 +20,7 @@ def checker(name):
     except IOError:             
         print('An error occured trying to read the file. Check the file is in the same folder.')
     except ValueError:
-        print('Non-numeric data found in the file. Did you put the correct files?') 
+        print('No input data found in the file. Did you put the correct files?') 
     except:
         print('Something is wrong.')
     counter['percentage'] = counter['vowel'] / counter['total'] #Percentage calculation
@@ -43,7 +43,7 @@ Include all the text files name sets
 Pass by reference
 '''
 def main():
-    fileName=("english.txt","french.txt","german.txt","italian.txt","spanish.txt")
+    fileName = ("english.txt","french.txt","german.txt","italian.txt","spanish.txt") # make file name as sets
     for name in fileName:
         print(name[0].upper()+name[1:-4]) # name string ends with '.txt' so use the simple expression like this will good to go
         printer(checker(name))
