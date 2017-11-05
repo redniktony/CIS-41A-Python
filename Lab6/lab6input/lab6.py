@@ -17,8 +17,10 @@ def checker(name):
                     if char.upper() in "AEIOU": 
                         counter[char.upper()] += 1 # Change all vowels to upper and check it 
                         counter["vowel"] += 1 # Add to counter 
-    except:
-        print("It's not common to have an error in this simple program, genius what did you mess up?")
+    except IOError:             
+        print('An error occured trying to read the file. Check the file is in the same folder.')
+    except ValueError:
+        print('Non-numeric data found in the file. Did you put the correct files?')    
     counter['percentage'] = counter['vowel'] / counter['total'] #Percentage calculation
     return counter 
 '''
@@ -41,9 +43,9 @@ Pass by reference
 def main():
     fileName=("english.txt","french.txt","german.txt","italian.txt","spanish.txt")
     for name in fileName:
-        print("")
         print(name[0].upper()+name[1:-4]) # name string ends with '.txt' so use the simple expression like this will good to go
         printer(checker(name))
+        print("")
 '''
 Run
 '''
